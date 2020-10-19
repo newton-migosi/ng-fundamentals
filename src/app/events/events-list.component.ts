@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventsDetails } from './events-details';
-
+import { EventService } from './shared/event.service';
 
 @Component({
     selector: 'events-list',
@@ -16,7 +16,13 @@ import { EventsDetails } from './events-details';
         </div>
     `
 })
+export class EventsListComponent implements OnInit {
+    events:any[]
 
-export class EventsListComponent {
-    events = EventsDetails.all_events;
+    constructor(private eventService: EventService) {
+    }
+    
+    ngOnInit() {
+        this.events = this.eventService.getEvents();
+    }
 }
