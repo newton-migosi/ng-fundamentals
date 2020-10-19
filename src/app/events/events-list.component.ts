@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsDetails } from './events-details';
 import { EventService } from './shared/event.service';
 
 @Component({
